@@ -420,6 +420,18 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   .cta-banner { padding: 32px 20px !important; }
   .programs-grid { grid-template-columns: 1fr !important; }
 }
+
+/* MOBILE2 presentation-skills.html */
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .pres-hero-badge { display: none !important; }
+  .stat-boxes { flex-wrap: wrap !important; }
+  .stat-boxes > div { flex: 1 1 auto !important; min-width: 120px !important; }
+  .testimonial-card { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; padding: 32px 28px !important; }
+  .testimonial-logo { margin-top: 4px; }
+  .testimonial-logo img { height: 56px !important; width: auto !important; }
+}
 </style>
 </head>
 <body>
@@ -442,7 +454,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <a href="index.html">Home</a>
 <a href="clients.html">Clients</a>
 <a href="f2f.html">F2F Training</a>
-<a href="presentation-skills.html" class="active"pp>Presentation Skills</a>
+<a href="presentation-skills.html" class="active">Presentation Skills</a>
 <a href="selling-by-stealth.html">Selling by Stealth</a>
 <a href="str.html">STR Program</a>
 <a href="team.html">Our Team</a>
@@ -458,7 +470,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="page-hero-left fade-in">
 <span class="tag">Corporate Program</span>
 <h1>Presentation<br/><span>Skills</span></h1>
-<p>Command every room. Move every audience. Whether it's a boardroom pitch, a large conference or a team update - great presenters aren't born, they're trained.</p>
+<p>Command every room. Move every audience. Whether it's a boardroom pitch, a large conference, or a team update — great presenters aren't born, they're trained.</p>
 <div class="hero-btns">
 <a class="btn-primary" href="contact.html">Enquire About This Program →</a>
 <a class="btn-secondary" href="f2f.html">All F2F Programs</a>
@@ -470,7 +482,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="book-label">Jeff's Companion Book</div>
 <img alt="The Secrets of a Great Pitch by Jeff Stibbard" onerror="this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&amp;q=80'; this.style.borderRadius='8px'" src="images/secrets of.png" style="width: auto; height: 200px;"/>
 <h3>The Secrets of a Great Pitch</h3>
-<p>A step-by-step guide to an amazing pitch - Jeff's companion book to this program, built from decades of real-world experience.</p>
+<p>A step-by-step guide to an amazing pitch, Jeff's companion book to this program, built from decades of real-world experience.</p>
 </div>
 </div>
 </div>
@@ -478,14 +490,14 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <!-- PROGRAM INTRO -->
 <div class="section" style="background: var(--white);">
 <div class="section-inner">
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+<div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
 <div>
 <span class="section-tag" style="text-align: left;">About the Program</span>
 <h2 style="font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 20px;">Communicate with<br/>clarity, confidence<br/>and influence.</h2>
 <div style="width: 48px; height: 3px; background: var(--blue); border-radius: 2px; margin-bottom: 24px;"></div>
 <p style="color: var(--gray); font-size: 0.97rem; line-height: 1.8; margin-bottom: 18px;">Most people are never formally taught how to present. They learn on the job, pick up bad habits, and carry the anxiety with them for years. This program changes that.</p>
 <p style="color: var(--gray); font-size: 0.97rem; line-height: 1.8; margin-bottom: 28px;">Built on real-world experience and refined across thousands of participants, Jeff's Presentation Skills Program gives your people a practical, structured approach to presenting with impact - every single time.</p>
-<div style="display: flex; gap: 20px; flex-wrap: wrap;">
+<div class="stat-boxes" style="display: flex; gap: 20px; flex-wrap: wrap;">
 <div style="text-align: center; padding: 16px 20px; border: 1px solid var(--gray-light); border-radius: 10px;">
 <div style="font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; color: var(--blue);">20+</div>
 <div style="font-size: 0.8rem; color: var(--gray);">Years delivering</div>
@@ -501,8 +513,8 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 </div>
 <div style="position: relative;">
-<video id="intro-video" loop  playsinline src="videos/pres.mp4" style="width: 100%; border-radius: 16px; box-shadow: 0 24px 60px rgba(11,30,56,0.14); display: block;"></video>
-<div style="position: absolute; bottom: -20px; left: -20px; background: var(--blue); border-radius: 12px; padding: 18px 24px; box-shadow: 0 12px 36px rgba(37,99,235,0.35);">
+<iframe src="https://www.youtube.com/embed/fpWBeDHCrsM" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; border-radius: 16px; box-shadow: 0 24px 60px rgba(11,30,56,0.14); display: block;"></iframe>
+<div class="pres-hero-badge" style="position: absolute; bottom: -20px; left: -20px; background: var(--blue); border-radius: 12px; padding: 18px 24px; box-shadow: 0 12px 36px rgba(37,99,235,0.35);">
 <div style="font-family: var(--font-head); font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Tailored · In-Person</div>
 <div style="font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: white;">Face-to-Face Delivery</div>
 </div>
@@ -521,14 +533,14 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="outcome-num">01</div>
 <div class="outcome-text">
 <h3>Choose the right strategy for your audience</h3>
-<p>Select presentation strategies, formats and delivery methods that match your target audience - and choose the visual aids, materials and techniques that suit the format and make your message land.</p>
+<p>Select presentation strategies, formats and delivery methods that match your target audience, and choose the visual aids, materials and techniques that suit the format and make your message land.</p>
 </div>
 </div>
 <div class="outcome-card">
 <div class="outcome-num">02</div>
 <div class="outcome-text">
 <h3>Master the Circle Pitch Structure</h3>
-<p>Use Jeff's proven Circle Pitch Structure to structure and deliver presentations that are coherent, engaging and purpose-driven - from opening to close.</p>
+<p>Use Jeff's proven Circle Pitch Structure to structure and deliver presentations that are coherent, engaging and purpose-driven, from opening to close.</p>
 </div>
 </div>
 <div class="outcome-card">
@@ -542,7 +554,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="outcome-num">04</div>
 <div class="outcome-text">
 <h3>Facilitate understanding and keep people engaged</h3>
-<p>Create space for your audience to seek clarification on key ideas. Summarise at strategic moments to embed understanding - and hold the room's attention from first slide to final word.</p>
+<p>Create space for your audience to seek clarification on key ideas. Summarise at strategic moments to embed understanding and hold the room's attention from first slide to final word.</p>
 </div>
 </div>
 </div>
@@ -555,7 +567,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   <div class="pitch-flow-header">
     <span class="tag">Jeff's Signature Framework</span>
     <h2>The Circle <em>Pitch Structure</em></h2>
-    <p>At the heart of this program is Jeff's own Circle Pitch Structure - a practical, memorable 9-step framework that gives presenters a reliable structure to fall back on, no matter the audience, the format, or the pressure they're under.</p>
+    <p>At the heart of this program is Jeff's own Circle Pitch Structure: a practical, memorable 9-step framework that gives presenters a reliable structure to fall back on, no matter the audience, the format, or the pressure they're under.</p>
   </div>
   <div class="pitch-circle-wrapper">
     <div class="pitch-outer-ring"></div>
@@ -654,7 +666,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <svg viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
 </div>
 <h3>Reading Your Audience</h3>
-<p>Learn to quickly assess who's in the room, what they need to hear, and how to tailor your delivery for maximum impact - from day one.</p>
+<p>Learn to quickly assess who's in the room, what they need to hear, and how to tailor your delivery for maximum impact from day one.</p>
 </div>
 <div class="learn-card">
 <div class="learn-card-icon">
@@ -668,7 +680,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <svg viewbox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
 </div>
 <h3>Structuring for Impact</h3>
-<p>Build presentations that follow a clear, logical arc - with a compelling opening, a well-supported middle and a close that moves people to action.</p>
+<p>Build presentations that follow a clear, logical arc, with a compelling opening, a well-supported middle and a close that moves people to action.</p>
 </div>
 <div class="learn-card">
 <div class="learn-card-icon">
@@ -682,7 +694,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
 </div>
 <h3>Monitoring the Room</h3>
-<p>Stay attuned to non-verbal cues and participant signals - and know how to adjust your delivery in real time to keep your audience with you.</p>
+<p>Stay attuned to non-verbal cues and participant signals and know how to adjust your delivery in real time to keep your audience with you.</p>
 </div>
 <div class="learn-card">
 <div class="learn-card-icon">
@@ -747,7 +759,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 </div>
 <!-- OPEN SESSIONS -->
-<div class="section" style="background: var(--white);">
+<div class="section" id="sessions" style="background: var(--white);">
 <div class="section-inner">
 <span class="section-tag">Open Enrolment</span>
 <h2 class="section-title">Upcoming Public Sessions</h2>
@@ -930,6 +942,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <ul>
 <li><a href="presentation-skills.html">Presentation Skills</a></li>
 <li><a href="selling-by-stealth.html">Selling by Stealth</a></li>
+<li><a href="change-management.html">Change Management</a></li>
 <li><a href="f2f.html">F2F Corporate Training</a></li>
 <li><a href="str.html">STR Programs</a></li>
 </ul>
@@ -946,25 +959,20 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 <div class="footer-contact-item">
 <svg viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-<span>Suite 14, Level 56<br/>MLC Centre, Sydney NSW 2000</span>
+<span>Suite 14, Level 56, MLC Centre<br/>19-29 Martin Place, Sydney NSW 2000</span>
 </div>
 </div>
 </div>
 <div class="footer-bottom">
 <span>© 2018 - 2026 Discover Performance Advisory. All rights reserved.</span>
 <div class="footer-bottom-links">
-<a href="#">Privacy Policy</a>
+<a href="privacy-policy.html">Privacy Policy</a>
 <span>|</span>
-<a href="#">Terms of Use</a>
+<a href="terms-of-use.html">Terms of Use</a>
 </div>
 </div>
 </footer>
 <script>
-  const vid = document.getElementById('intro-video');
-  new IntersectionObserver((entries) => {
-    entries[0].isIntersecting ? vid.play() : vid.pause();
-  }, { threshold: 0.3 }).observe(vid);
-
   const pitchCards = document.querySelectorAll('.pitch-card');
   if (pitchCards.length) {
     const cardObserver = new IntersectionObserver((entries) => {

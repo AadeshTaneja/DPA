@@ -588,7 +588,7 @@ nav {
   height: 180px;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: flex-end;
 }
@@ -1197,6 +1197,14 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   .cta-banner { padding: 32px 20px !important; }
   .programs-grid { grid-template-columns: 1fr !important; }
 }
+
+/* MOBILE2 f2f.html */
+
+@media (max-width: 900px) {
+  .testimonial-card { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; padding: 32px 28px !important; }
+  .testimonial-logo { margin-top: 4px; }
+  .testimonial-logo img { height: 56px !important; width: auto !important; }
+}
 </style>
 </head>
 <body>
@@ -1247,12 +1255,12 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="why-card">
 <div class="why-card-icon"><svg viewbox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div>
 <h3>Flexibility</h3>
-<p>You decide how and when the program is delivered — full day, half day, or over multiple sessions.</p>
+<p>You decide how and when the program is delivered: full day, half day, or over multiple sessions.</p>
 </div>
 <div class="why-card">
 <div class="why-card-icon"><svg viewbox="0 0 24 24"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></div>
 <h3>Experience</h3>
-<p>20+ years of experience delivering content that engages, sticks and creates real behavioural change.</p>
+<p>20+ years of experience delivering content that engages, sticks, and creates real behavioural change.</p>
 </div>
 <div class="why-card">
 <div class="why-card-icon"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
@@ -1278,7 +1286,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="section-divider"></div>
 <div class="programs-grid">
 <div class="program-card">
-<div class="program-card-img" style="background: linear-gradient(135deg, #0b1e38, #1a3d6e); position:relative; overflow:hidden;">
+<div class="program-card-img" style="background: linear-gradient(135deg, #0b1e38, #1a3d6e); position:relative;">
 <img alt="Presentation skills training" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&amp;q=75" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;"/>
 <div class="program-card-icon" style="position:relative;z-index:1;">
 <svg viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -1295,14 +1303,14 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 </div>
 <div class="program-card">
-<div class="program-card-img" style="background: linear-gradient(135deg, #132c52, #0f3460); position:relative; overflow:hidden;">
+<div class="program-card-img" style="background: linear-gradient(135deg, #132c52, #0f3460); position:relative;">
 <img alt="Sales training" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=500&amp;q=75" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;"/>
 <div class="program-card-icon" style="position:relative;z-index:1;">
 <svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
 </div>
 </div>
 <div class="program-card-body">
-<h3>Selling by Stealth - 90 Day Sales Transformation</h3>
+<h3>Selling by Stealth · 90 Day Sales Transformation</h3>
 <p>Spot opportunities, build trust and close more business with confidence.</p>
 <div style="display:flex;gap:8px;margin-top:16px;">
 <span style="font-size:0.75rem;font-weight:600;color:var(--blue);background:var(--blue-pale);padding:4px 12px;border-radius:20px;">90 Days</span>
@@ -1312,7 +1320,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 </div>
 <div class="program-card">
-<div class="program-card-img" style="background: linear-gradient(135deg, #1a3d6e, #2563eb); position:relative; overflow:hidden;">
+<div class="program-card-img" style="background: linear-gradient(135deg, #1a3d6e, #2563eb); position:relative;">
 <img alt="Change management training" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&amp;q=75" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;"/>
 <div class="program-card-icon" style="position:relative;z-index:1;">
 <svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -1325,7 +1333,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <span style="font-size:0.75rem;font-weight:600;color:var(--blue);background:var(--blue-pale);padding:4px 12px;border-radius:20px;">In-Person</span>
 <span style="font-size:0.75rem;font-weight:600;color:var(--blue);background:var(--blue-pale);padding:4px 12px;border-radius:20px;">Leadership</span>
 </div>
-<a href="contact.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--blue);font-size:0.88rem;font-weight:600;text-decoration:none;">Enquire Now →</a>
+<a href="change-management.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--blue);font-size:0.88rem;font-weight:600;text-decoration:none;">Explore Program →</a>
 </div>
 </div>
 </div>
@@ -1337,7 +1345,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="testimonial-author">Senior Art Director</div>
 <div class="testimonial-role">M&amp;C Saatchi Australia</div>
 </div>
-<div class="testimonial-logo"><img src="logos/mcs.png" style="width: auto; height: 82px;"/></div>
+<div class="testimonial-logo"><img alt="M&amp;C Saatchi logo" src="logos/mcs.png" style="width: auto; height: 82px;"/></div>
 </div>
 <div class="cta-banner">
 <div class="cta-banner-icon">
@@ -1377,6 +1385,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <ul>
 <li><a href="presentation-skills.html">Presentation Skills</a></li>
 <li><a href="selling-by-stealth.html">Selling by Stealth</a></li>
+<li><a href="change-management.html">Change Management</a></li>
 <li><a href="f2f.html">F2F Corporate Training</a></li>
 <li><a href="str.html">STR Programs</a></li>
 </ul>
@@ -1393,16 +1402,16 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 <div class="footer-contact-item">
 <svg viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-<span>Suite 14, Level 56<br/>MLC Centre, Sydney NSW 2000</span>
+<span>Suite 14, Level 56, MLC Centre<br/>19-29 Martin Place, Sydney NSW 2000</span>
 </div>
 </div>
 </div>
 <div class="footer-bottom">
 <span>© 2018 - 2026 Discover Performance Advisory. All rights reserved.</span>
 <div class="footer-bottom-links">
-<a href="#">Privacy Policy</a>
+<a href="privacy-policy.html">Privacy Policy</a>
 <span>|</span>
-<a href="#">Terms of Use</a>
+<a href="terms-of-use.html">Terms of Use</a>
 </div>
 </div>
 </footer>

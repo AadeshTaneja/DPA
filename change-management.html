@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Change Management Training | Discover Performance Advisory</title>
+<link rel="icon" type="image/x-icon" href="favicon/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"/>
+<link rel="manifest" href="favicon/site.webmanifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0b1e38;
+  --navy-mid: #132c52;
+  --navy-light: #1a3d6e;
+  --blue: #2563eb;
+  --blue-light: #3b82f6;
+  --blue-accent: #60a5fa;
+  --blue-pale: #dbeafe;
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --gray: #64748b;
+  --gray-light: #e2e8f0;
+  --text: #1e293b;
+  --font-head: 'Sora', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--text); background: var(--white); overflow-x: hidden; }
+
+.topbar { background: var(--navy); color: #94a3b8; font-size: 0.78rem; padding: 8px 0; text-align: center; letter-spacing: 0.02em; }
+.topbar a { color: #94a3b8; text-decoration: none; margin: 0 16px; }
+.topbar a:hover { color: var(--blue-accent); }
+.topbar span { margin: 0 4px; opacity: 0.4; }
+
+nav { background: var(--white); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--gray-light); box-shadow: 0 2px 20px rgba(11,30,56,0.08); }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.logo-text .brand { font-family: var(--font-head); font-size: 0.72rem; font-weight: 600; color: var(--navy); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.2; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; color: var(--navy); text-decoration: none; padding: 8px 14px; border-radius: 6px; transition: all 0.2s; }
+.nav-links a:hover { color: var(--blue); background: var(--blue-pale); }
+.nav-links a.active { color: var(--blue); border-bottom: 2px solid var(--blue); border-radius: 0; }
+.nav-cta { background: var(--navy) !important; color: var(--white) !important; padding: 10px 22px !important; border-radius: 8px !important; font-weight: 600 !important; }
+.nav-cta:hover { background: var(--blue) !important; }
+
+.btn-primary { background: var(--blue); color: var(--white); border: none; padding: 14px 28px; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.25s; }
+.btn-primary:hover { background: var(--blue-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,99,235,0.4); }
+.btn-secondary { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); padding: 14px 28px; border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.25s; }
+.btn-secondary:hover { border-color: var(--blue-accent); color: var(--blue-accent); }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); padding: 12px 24px; border-radius: 8px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+.btn-outline:hover { background: var(--navy); color: var(--white); }
+
+.section { padding: 80px 32px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: block; text-align: center; }
+.section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--navy); text-align: center; line-height: 1.2; margin-bottom: 16px; }
+.section-divider { width: 48px; height: 3px; background: var(--blue); border-radius: 2px; margin: 0 auto 52px; }
+
+/* HERO */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0f3460 100%);
+  padding: 100px 32px 80px;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+.hero-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.13; z-index: 0; }
+.page-hero::before { content: ''; position: absolute; right: -100px; top: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%); }
+.page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; width: 100%; }
+.hero-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 16px; display: block; }
+.page-hero h1 { font-family: var(--font-head); font-size: clamp(2.4rem, 4.5vw, 3.4rem); font-weight: 800; color: var(--white); margin-bottom: 20px; line-height: 1.1; }
+.page-hero h1 span { color: var(--blue-accent); }
+.page-hero p { color: #94a3b8; font-size: 1.02rem; line-height: 1.75; max-width: 580px; margin-bottom: 36px; }
+.hero-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.hero-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 6px 14px; font-size: 0.8rem; color: #94a3b8; display: flex; align-items: center; gap: 6px; }
+.hero-badge svg { width: 14px; height: 14px; stroke: var(--blue-accent); fill: none; stroke-width: 2; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-divider { width: 48px; height: 3px; background: var(--blue); border-radius: 2px; margin-top: 40px; }
+
+/* OUTCOMES */
+.outcomes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.outcome-card { background: var(--white); border: 1px solid var(--gray-light); border-radius: 16px; padding: 32px 28px; display: flex; gap: 20px; align-items: flex-start; transition: all 0.3s; }
+.outcome-card:hover { border-color: var(--blue); box-shadow: 0 12px 36px rgba(37,99,235,0.1); transform: translateY(-3px); }
+.outcome-num { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; color: var(--blue-pale); line-height: 1; flex-shrink: 0; width: 52px; text-align: center; transition: color 0.3s; }
+.outcome-card:hover .outcome-num { color: var(--blue); }
+.outcome-text h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+.outcome-text p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; }
+
+/* FEATURE BANNER */
+.feature-banner { position: relative; height: 300px; overflow: hidden; }
+.feature-banner img { width: 100%; height: 100%; object-fit: cover; }
+.feature-banner-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(11,30,56,0.92) 0%, rgba(11,30,56,0.5) 60%, transparent 100%); display: flex; align-items: center; padding: 0 80px; }
+.feature-banner-content .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 12px; display: block; }
+.feature-banner-content h2 { font-family: var(--font-head); font-size: 1.9rem; font-weight: 700; color: white; line-height: 1.25; margin-bottom: 12px; }
+.feature-banner-content p { color: #94a3b8; font-size: 0.92rem; line-height: 1.7; max-width: 420px; }
+
+/* CTA BANNER */
+.cta-banner { background: var(--off-white); border: 1px solid var(--gray-light); border-radius: 16px; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.cta-banner-icon { width: 60px; height: 60px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.cta-banner-icon svg { width: 28px; height: 28px; stroke: white; fill: none; stroke-width: 1.8; }
+.cta-banner-text h3 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.cta-banner-text p { color: var(--gray); font-size: 0.92rem; }
+
+/* FOOTER */
+footer { background: var(--navy); color: #94a3b8; padding: 60px 32px 0; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.3fr; gap: 48px; padding-bottom: 52px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.footer-brand p { font-size: 0.87rem; line-height: 1.7; margin-top: 16px; color: #64748b; max-width: 260px; }
+.footer-col h4 { font-family: var(--font-head); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 20px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: #64748b; text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--blue-accent); }
+.footer-contact-item { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start; }
+.footer-contact-item svg { width: 16px; height: 16px; stroke: var(--blue); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+.footer-contact-item span { font-size: 0.87rem; color: #64748b; line-height: 1.5; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #475569; }
+.footer-bottom-links { display: flex; gap: 20px; }
+.footer-bottom-links a { color: #475569; text-decoration: none; }
+
+/* MOBILE NAV */
+.nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+nav.nav-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.nav-open .nav-burger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .nav-burger { display: flex; }
+  .nav-links { display: none; position: fixed; inset: 0; background: var(--navy); flex-direction: column; align-items: center; justify-content: center; gap: 4px; z-index: 1000; padding: 40px 24px; overflow-y: auto; }
+  nav.nav-open .nav-links { display: flex; }
+  .nav-links a { color: var(--white) !important; font-size: 1.1rem !important; padding: 15px 24px !important; width: 100%; max-width: 340px; text-align: center; border-radius: 10px !important; border-bottom: none !important; }
+  .nav-links a:hover { background: rgba(255,255,255,0.08) !important; color: var(--blue-accent) !important; }
+  .nav-links a.active { color: var(--blue-accent) !important; background: rgba(96,165,250,0.1) !important; }
+  .nav-cta { background: var(--blue) !important; margin-top: 8px; border-radius: 10px !important; }
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .cta-banner { flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 32px 24px !important; }
+  .feature-banner-overlay { padding: 0 40px; }
+  .feature-banner-content h2 { font-size: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .nav-inner { padding: 0 16px; height: 64px; }
+  .section { padding: 60px 16px; }
+  .footer-inner { grid-template-columns: 1fr !important; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .footer-bottom-links { justify-content: center; }
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeInUp 0.65s ease both; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+<a href="tel:0419426078">📞 0419 426 078</a>
+<span>|</span>
+<a href="mailto:jstibbard@discoverperformance.com">✉ jstibbard@discoverperformance.com</a>
+</div>
+
+<nav>
+<div class="nav-inner">
+<a class="logo" href="index.html">
+<img alt="DPA Logo" src="logo.png" style="height:52px;width:auto;"/>
+<div class="logo-text">
+<div class="brand">Discover<br/>Performance<br/>Advisory</div>
+</div>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="clients.html">Clients</a>
+<a class="active" href="f2f.html">F2F Training</a>
+<a href="presentation-skills.html">Presentation Skills</a>
+<a href="selling-by-stealth.html">Selling by Stealth</a>
+<a href="str.html">STR Program</a>
+<a href="team.html">Our Team</a>
+<a class="nav-cta" href="contact.html">Contact Us</a>
+</div>
+<button aria-label="Open menu" class="nav-burger"><span></span><span></span><span></span></button>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+<img alt="" class="hero-bg-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&amp;q=70"/>
+<div class="page-hero-inner">
+<div class="fade-in">
+<span class="hero-tag">F2F Corporate Program · Leadership &amp; Change</span>
+<h1>Change<br/><span>Management</span></h1>
+<p>Equip your team to lead, adapt and embed change with confidence. Built on a proven framework, this program gives leaders and managers the tools they need to navigate change and bring their people with them.</p>
+<div class="hero-badges">
+<div class="hero-badge"><svg viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>In-Person Delivery</div>
+<div class="hero-badge"><svg viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>Tailored to Your Organisation</div>
+<div class="hero-badge"><svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Leadership &amp; Team Focus</div>
+</div>
+<div class="hero-btns">
+<a class="btn-primary" href="contact.html">Enquire About This Program →</a>
+<a class="btn-secondary" href="f2f.html">All F2F Programs</a>
+</div>
+<div class="hero-divider"></div>
+</div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" style="background: var(--white);">
+<div class="section-inner">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+<div>
+<span class="section-tag" style="text-align:left;">About the Program</span>
+<h2 style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:20px;">Lead change.<br/>Bring people with you.</h2>
+<div style="width:48px;height:3px;background:var(--blue);border-radius:2px;margin-bottom:24px;"></div>
+<p style="color:var(--gray);font-size:0.97rem;line-height:1.8;margin-bottom:18px;">Change is constant, but knowing how to manage it effectively is a skill. This program gives participants a structured framework for navigating organisational change, from planning and communication through to embedding and sustaining new behaviours.</p>
+<p style="color:var(--gray);font-size:0.97rem;line-height:1.8;margin-bottom:28px;">Using a real-world Case Study approach, participants practise applying the tools in a realistic context, building both confidence and capability they can use from day one.</p>
+<div style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:12px;padding:20px 24px;border-left:4px solid var(--blue);">
+<p style="font-size:0.9rem;color:var(--navy);font-style:italic;font-weight:500;">"Most change initiatives fail not because of the plan, but because of how people are brought through it. This program changes that."</p>
+<p style="font-size:0.82rem;color:var(--gray);margin-top:8px;">— Jeff Stibbard, Program Facilitator</p>
+</div>
+</div>
+<div style="background:var(--off-white);border:1px solid var(--gray-light);border-radius:20px;padding:40px 36px;">
+<div style="font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;">Program At a Glance</div>
+<div style="display:flex;flex-direction:column;gap:16px;">
+<div style="display:flex;gap:14px;align-items:flex-start;">
+<div style="width:36px;height:36px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+<svg style="width:18px;height:18px;stroke:var(--blue-accent);fill:none;stroke-width:2;" viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+</div>
+<div><div style="font-weight:600;color:var(--navy);font-size:0.9rem;">Who It's For</div><div style="color:var(--gray);font-size:0.85rem;margin-top:2px;">Leaders, managers and project sponsors responsible for guiding teams through change</div></div>
+</div>
+<div style="display:flex;gap:14px;align-items:flex-start;">
+<div style="width:36px;height:36px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+<svg style="width:18px;height:18px;stroke:var(--blue-accent);fill:none;stroke-width:2;" viewbox="0 0 24 24"><rect height="18" rx="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+</div>
+<div><div style="font-weight:600;color:var(--navy);font-size:0.9rem;">Format</div><div style="color:var(--gray);font-size:0.85rem;margin-top:2px;">In-person, tailored to your organisation's context and change agenda</div></div>
+</div>
+<div style="display:flex;gap:14px;align-items:flex-start;">
+<div style="width:36px;height:36px;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+<svg style="width:18px;height:18px;stroke:var(--blue-accent);fill:none;stroke-width:2;" viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+</div>
+<div><div style="font-weight:600;color:var(--navy);font-size:0.9rem;">Includes</div><div style="color:var(--gray);font-size:0.85rem;margin-top:2px;">Change Toolkit and Case Study materials</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PROGRAM OUTCOMES -->
+<div class="section" style="background:var(--off-white);">
+<div class="section-inner">
+<span class="section-tag">Program Outcomes</span>
+<h2 class="section-title">Upon completion, participants will be able to:</h2>
+<div class="section-divider"></div>
+<div class="outcomes-grid">
+<div class="outcome-card">
+<div class="outcome-num">01</div>
+<div class="outcome-text">
+<h3>Identify the steps of a Change Management Framework</h3>
+<p>Understand the end-to-end process of managing change, from diagnosis and planning through to communication, implementation and review.</p>
+</div>
+</div>
+<div class="outcome-card">
+<div class="outcome-num">02</div>
+<div class="outcome-text">
+<h3>Develop skills through a real-world Case Study</h3>
+<p>Apply the framework in a realistic, hands-on scenario, building practical capability and confidence that transfers directly to your own organisation's challenges.</p>
+</div>
+</div>
+<div class="outcome-card">
+<div class="outcome-num">03</div>
+<div class="outcome-text">
+<h3>Describe how Change Management and Project Management fit together</h3>
+<p>Understand the relationship and boundaries between the two disciplines, and why integrating them leads to better outcomes for both people and projects.</p>
+</div>
+</div>
+<div class="outcome-card">
+<div class="outcome-num">04</div>
+<div class="outcome-text">
+<h3>Use the Change Toolkit</h3>
+<p>Leave with a practical set of tools and templates you can apply immediately, including stakeholder mapping, impact assessments, communication and resistance plans.</p>
+</div>
+</div>
+<div class="outcome-card" style="grid-column: 1 / -1; max-width: 560px; margin: 0 auto;">
+<div class="outcome-num">05</div>
+<div class="outcome-text">
+<h3>Monitor and embed change for lasting impact</h3>
+<p>Know how to track progress, identify slippage early and sustain new behaviours over time, so change sticks well after the project closes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- FEATURE BANNER -->
+<div class="feature-banner">
+<img alt="" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&amp;q=80"/>
+<div class="feature-banner-overlay">
+<div class="feature-banner-content">
+<span class="tag">Why It Matters</span>
+<h2>Change doesn't fail on paper.<br/>It fails with people.</h2>
+<p>This program gives leaders the language, tools and frameworks to close that gap and bring their teams through change with confidence.</p>
+</div>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="section" style="background:var(--white);">
+<div class="section-inner">
+<div class="cta-banner">
+<div class="cta-banner-icon">
+<svg viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<div class="cta-banner-text">
+<h3>Bring this program to your organisation</h3>
+<p>Get in touch to discuss how the Change Management program can be tailored for your team.</p>
+</div>
+<a class="btn-outline" href="contact.html">Enquire Now →</a>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-inner">
+<div class="footer-brand">
+<a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+<img alt="DPA" src="logo.png" style="height:48px;width:auto;"/>
+<div class="brand" style="font-family:var(--font-head);font-size:0.72rem;font-weight:600;color:white;letter-spacing:0.12em;text-transform:uppercase;line-height:1.4;">Discover<br/>Performance<br/>Advisory</div>
+</a>
+<p>Helping organisations unlock potential, strengthen performance and create meaningful change.</p>
+</div>
+<div class="footer-col">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="clients.html">Clients</a></li>
+<li><a href="f2f.html">F2F Training</a></li>
+<li><a href="str.html">STR Program</a></li>
+<li><a href="team.html">Our Team</a></li>
+<li><a href="case-studies.html">Case Studies</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Programs</h4>
+<ul>
+<li><a href="presentation-skills.html">Presentation Skills</a></li>
+<li><a href="selling-by-stealth.html">Selling by Stealth</a></li>
+<li><a href="change-management.html">Change Management</a></li>
+<li><a href="f2f.html">F2F Corporate Training</a></li>
+<li><a href="str.html">STR Programs</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<div class="footer-contact-item">
+<svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"></path></svg>
+<span>0419 426 078</span>
+</div>
+<div class="footer-contact-item">
+<svg viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+<span>jstibbard@discoverperformance.com</span>
+</div>
+<div class="footer-contact-item">
+<svg viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+<span>Suite 14, Level 56, MLC Centre<br/>19-29 Martin Place, Sydney NSW 2000</span>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2018 - 2026 Discover Performance Advisory. All rights reserved.</span>
+<div class="footer-bottom-links">
+<a href="privacy-policy.html">Privacy Policy</a>
+<span>|</span>
+<a href="terms-of-use.html">Terms of Use</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+  var burger = document.querySelector('.nav-burger');
+  var nav = document.querySelector('nav');
+  if(!burger) return;
+  burger.addEventListener('click', function(){
+    nav.classList.toggle('nav-open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('nav-open'); });
+  });
+})();
+</script>
+</body>
+</html>

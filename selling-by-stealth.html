@@ -409,6 +409,15 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   .cta-banner { padding: 32px 20px !important; }
   .programs-grid { grid-template-columns: 1fr !important; }
 }
+
+/* MOBILE2 selling-by-stealth.html */
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .testimonial-card { flex-direction: column !important; align-items: flex-start !important; gap: 24px !important; padding: 32px 28px !important; }
+  .testimonial-logo { margin-top: 4px; }
+  .testimonial-logo img { height: 56px !important; width: auto !important; }
+}
 </style>
 </head>
 <body>
@@ -449,7 +458,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <p>Stop pushing. Start connecting. The most effective salespeople aren't the loudest in the room, they're the ones who know how to get under the radar, understand what customers truly need, and create value before the competition even knows they're there.</p>
 <div class="hero-badges">
 <div class="hero-badge"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>90 Day Program</div>
-<div class="hero-badge"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>5 YouTube Videos Included</div>
+<div class="hero-badge"><svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>5 Exclusive Video Modules Included</div>
 <div class="hero-badge"><svg viewbox="0 0 24 24"><path d="M9 12l2 2 4-4"></path><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9"></path></svg>Action Plan Included</div>
 </div>
 <div class="hero-btns">
@@ -463,7 +472,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="book-label">Jeff's Companion Book</div>
 <img alt="Selling by Stealth by Jeff Stibbard" onerror="this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&amp;q=80'; this.style.borderRadius='8px'" src="images/selling by stealth.png" style="width: auto; height: 200px;"/>
 <h3>Selling by Stealth™</h3>
-<p>The 90 day sales transformation - Jeff's companion book to this program. Built from real industry experience across pharmaceutical, FMCG, financial services and more.</p>
+<p>The 90 day sales transformation, Jeff's companion book to this program. Built from real industry experience across pharmaceutical, FMCG, financial services and more.</p>
 <div class="book-stat">
 <div class="book-stat-item"><div class="num">90</div><div class="label">Day journey</div></div>
 <div class="book-stat-item"><div class="num">5</div><div class="label">Videos included</div></div>
@@ -476,15 +485,9 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <!-- PROGRAM INTRO -->
 <div class="section" style="background: var(--white);">
 <div class="section-inner">
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+<div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
 <div style="position: relative;">
-<video id="intro-video" loop playsinline src="videos/sell.mp4" style="width: 100%; border-radius: 16px; box-shadow: 0 24px 60px rgba(11,30,56,0.14); display: block;"></video>
-<script>
-  const vid = document.getElementById('intro-video');
-  new IntersectionObserver((entries) => {
-    entries[0].isIntersecting ? vid.play() : vid.pause();
-  }, { threshold: 0.3 }).observe(vid);
-</script>
+<iframe src="https://www.youtube.com/embed/2374qqmX-ds" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; border-radius: 16px; box-shadow: 0 24px 60px rgba(11,30,56,0.14); display: block;"></iframe>
 </div>
 <div>
 <span class="section-tag" style="text-align: left;">About the Program</span>
@@ -557,7 +560,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="outcome-num">01</div>
 <div class="outcome-text">
 <h3>Recognise and create opportunities to sell without being a salesperson</h3>
-<p>Spot the moments to promote your organisation's goods and services with confidence and authenticity - building capability and momentum with every interaction.</p>
+<p>Spot the moments to promote your organisation's goods and services with confidence and authenticity, building capability and momentum with every interaction.</p>
 </div>
 </div>
 <div class="outcome-card">
@@ -610,7 +613,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <svg viewbox="0 0 24 24"><path d="M3 10.5L12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg>
 </div>
 <h3>Embed with Your Customers</h3>
-<p>Great account management isn't maintenance - it's expansion. Build the strategies to make your organisation feel like an extension of your customer's own team.</p>
+<p>Great account management isn't maintenance. It's expansion. Build the strategies to make your organisation feel like an extension of your customer's own team.</p>
 </div>
 <div class="pillar-card">
 <div class="pillar-icon">
@@ -643,7 +646,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="feature-banner-content">
 <span class="tag">The Competitive Edge</span>
 <h2>The best salespeople<br/>never feel like<br/>salespeople.</h2>
-<p>They listen more than they talk. They understand before they advise. They earn trust before they ask for the order. This is the Stealth way - and this program will make it yours.</p>
+<p>They listen more than they talk. They understand before they advise. They earn trust before they ask for the order. This is the Stealth way, and this program will make it yours.</p>
 </div>
 </div>
 </div>
@@ -665,7 +668,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 <div class="action-feature">
 <div class="action-feature-icon"><svg viewbox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect height="14" rx="2" width="15" x="1" y="5"></rect></svg></div>
-<p><strong>5 YouTube Videos</strong>Exclusive access to Jeff's video series - revisit key concepts anytime.</p>
+<p><strong>5 Exclusive Video Modules</strong>Exclusive access to Jeff's video series. Revisit key concepts anytime.</p>
 </div>
 <div class="action-feature">
 <div class="action-feature-icon"><svg viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
@@ -887,6 +890,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <ul>
 <li><a href="presentation-skills.html">Presentation Skills</a></li>
 <li><a href="selling-by-stealth.html">Selling by Stealth</a></li>
+<li><a href="change-management.html">Change Management</a></li>
 <li><a href="f2f.html">F2F Corporate Training</a></li>
 <li><a href="str.html">STR Programs</a></li>
 </ul>
@@ -903,16 +907,16 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </div>
 <div class="footer-contact-item">
 <svg viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-<span>Suite 14, Level 56<br/>MLC Centre, Sydney NSW 2000</span>
+<span>Suite 14, Level 56, MLC Centre<br/>19-29 Martin Place, Sydney NSW 2000</span>
 </div>
 </div>
 </div>
 <div class="footer-bottom">
 <span>© 2018 - 2026 Discover Performance Advisory. All rights reserved.</span>
 <div class="footer-bottom-links">
-<a href="#">Privacy Policy</a>
+<a href="privacy-policy.html">Privacy Policy</a>
 <span>|</span>
-<a href="#">Terms of Use</a>
+<a href="terms-of-use.html">Terms of Use</a>
 </div>
 </div>
 </footer>
