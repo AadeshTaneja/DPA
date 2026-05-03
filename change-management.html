@@ -130,16 +130,19 @@ footer { background: var(--navy); color: #94a3b8; padding: 60px 32px 0; }
 nav.nav-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 nav.nav-open .nav-burger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+nav.nav-open .nav-burger span { background: var(--white); }
+nav.nav-open { z-index: 1100 !important; }
 
 @media (max-width: 900px) {
   .nav-burger { display: flex; }
   .nav-links { display: none; position: fixed; inset: 0; background: var(--navy); flex-direction: column; align-items: center; justify-content: center; gap: 4px; z-index: 1000; padding: 40px 24px; overflow-y: auto; }
-  nav.nav-open .nav-links { display: flex; }
+  nav.nav-open .nav-links { visibility: visible; opacity: 1; transform: translateY(0); transition: opacity 0.28s ease, transform 0.28s ease; pointer-events: auto; }
   .nav-links a { color: var(--white) !important; font-size: 1.1rem !important; padding: 15px 24px !important; width: 100%; max-width: 340px; text-align: center; border-radius: 10px !important; border-bottom: none !important; }
   .nav-links a:hover { background: rgba(255,255,255,0.08) !important; color: var(--blue-accent) !important; }
   .nav-links a.active { color: var(--blue-accent) !important; background: rgba(96,165,250,0.1) !important; }
   .nav-cta { background: var(--blue) !important; margin-top: 8px; border-radius: 10px !important; }
   .outcomes-grid { grid-template-columns: 1fr; }
+  .cm-about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .cta-banner { flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 32px 24px !important; }
   .feature-banner-overlay { padding: 0 40px; }
@@ -147,14 +150,44 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 }
 @media (max-width: 480px) {
   .nav-inner { padding: 0 16px; height: 64px; }
+  .topbar { font-size: 0.7rem; padding: 5px 12px; }
+  .page-hero-inner { padding: 48px 20px !important; }
+  .page-hero-left h1 { font-size: clamp(1.9rem, 7vw, 2.8rem) !important; }
+  .btn-primary, .btn-secondary { padding: 12px 20px; font-size: 0.88rem; }
+  .hero-btns { gap: 10px; }
   .section { padding: 60px 16px; }
+  .outcomes-grid { gap: 12px !important; }
+  .cm-about-grid { gap: 28px !important; }
   .footer-inner { grid-template-columns: 1fr !important; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .footer-bottom-links { justify-content: center; }
+  .cta-banner { padding: 32px 20px !important; }
 }
 
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 .fade-in { animation: fadeInUp 0.65s ease both; }
+
+/* Nav close button (inside overlay) */
+.nav-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.nav-close-btn:hover { background: rgba(255,255,255,0.2); }
 </style>
 </head>
 <body>
@@ -212,7 +245,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <!-- ABOUT -->
 <div class="section" style="background: var(--white);">
 <div class="section-inner">
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+<div class="cm-about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
 <div>
 <span class="section-tag" style="text-align:left;">About the Program</span>
 <h2 style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:20px;">Lead change.<br/>Bring people with you.</h2>
@@ -391,7 +424,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   burger.addEventListener('click', function(){
     nav.classList.toggle('nav-open');
   });
-  document.querySelectorAll('.nav-links a').forEach(function(a){
+  document.querySelectorAll('.nav-links a, .nav-close-btn').forEach(function(a){
     a.addEventListener('click', function(){ nav.classList.remove('nav-open'); });
   });
 })();

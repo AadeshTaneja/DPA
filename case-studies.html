@@ -249,6 +249,8 @@ footer { background: var(--navy); color: #94a3b8; padding: 60px 32px 0; }
   .cs-section:last-child { border-bottom: none; }
   .cs-results-grid { grid-template-columns: repeat(2, 1fr); }
   .between-stats { grid-template-columns: repeat(2, 1fr); }
+  .cs-results-split { grid-template-columns: 1fr !important; }
+  .cs-results-col-r { border-left: none !important; padding-left: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; }
   .process-highlight { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
   .cta-banner { flex-direction: column; align-items: center; text-align: center; gap: 20px; padding: 32px 24px !important; }
@@ -272,6 +274,7 @@ footer { background: var(--navy); color: #94a3b8; padding: 60px 32px 0; }
   cursor: pointer;
   padding: 8px;
   z-index: 1001;
+  position: relative;
 }
 .nav-burger span {
   display: block;
@@ -284,10 +287,12 @@ footer { background: var(--navy); color: #94a3b8; padding: 60px 32px 0; }
 nav.nav-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 nav.nav-open .nav-burger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+nav.nav-open .nav-burger span { background: var(--white); }
+nav.nav-open { z-index: 1100 !important; }
 @media (max-width: 900px) {
   .nav-burger { display: flex; }
   .nav-links {
-    display: none;
+    display: flex;
     position: fixed;
     inset: 0;
     background: var(--navy);
@@ -298,8 +303,13 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
     z-index: 1000;
     padding: 40px 24px;
     overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0s linear 0.28s;
+    pointer-events: none;
   }
-  nav.nav-open .nav-links { display: flex; }
+  nav.nav-open .nav-links { visibility: visible; opacity: 1; transform: translateY(0); transition: opacity 0.28s ease, transform 0.28s ease; pointer-events: auto; }
   .nav-links a {
     color: var(--white) !important;
     font-size: 1.1rem !important;
@@ -342,7 +352,31 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   .str-courses-grid { grid-template-columns: 1fr !important; }
   .cta-banner { padding: 32px 20px !important; }
   .programs-grid { grid-template-columns: 1fr !important; }
+  .cs-results-grid { grid-template-columns: 1fr !important; }
+  .between-stats { grid-template-columns: repeat(2, 1fr) !important; }
 }
+
+/* Nav close button (inside overlay) */
+.nav-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.nav-close-btn:hover { background: rgba(255,255,255,0.2); }
 </style>
 </head>
 <body>
@@ -526,7 +560,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <!-- RESULTS — list style for CS2 -->
 <div class="cs-results list-style" style="background: linear-gradient(135deg, #0f2a50 0%, #132c52 100%);">
 <span class="cs-results-label">Results: A Clear Success</span>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+<div class="cs-results-split" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
 <div style="padding-right: 40px;">
 <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.7; margin-bottom: 20px;">Participants surveyed post-training indicated a high level of change readiness, with the program landing as a standout moment in the organisation's broader change capability journey.</p>
 <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -535,7 +569,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 <div class="cs-result-item"><span>High-level change readiness confirmed by post-training surveys</span></div>
 </div>
 </div>
-<div style="border-left: 1px solid rgba(255,255,255,0.08); padding-left: 40px;">
+<div class="cs-results-col-r" style="border-left: 1px solid rgba(255,255,255,0.08); padding-left: 40px;">
 <div style="display: flex; flex-direction: column; gap: 10px;">
 <div class="cs-result-item"><span>Content aligned to the company's capability program and leadership model</span></div>
 <div class="cs-result-item"><span>Branded materials that felt native to the organisation</span></div>
@@ -625,7 +659,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   burger.addEventListener('click', function(){
     nav.classList.toggle('nav-open');
   });
-  document.querySelectorAll('.nav-links a').forEach(function(a){
+  document.querySelectorAll('.nav-links a, .nav-close-btn').forEach(function(a){
     a.addEventListener('click', function(){ nav.classList.remove('nav-open'); });
   });
 })();

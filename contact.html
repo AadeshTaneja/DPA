@@ -1121,6 +1121,7 @@ footer {
   cursor: pointer;
   padding: 8px;
   z-index: 1001;
+  position: relative;
 }
 .nav-burger span {
   display: block;
@@ -1133,10 +1134,12 @@ footer {
 nav.nav-open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 nav.nav-open .nav-burger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+nav.nav-open .nav-burger span { background: var(--white); }
+nav.nav-open { z-index: 1100 !important; }
 @media (max-width: 900px) {
   .nav-burger { display: flex; }
   .nav-links {
-    display: none;
+    display: flex;
     position: fixed;
     inset: 0;
     background: var(--navy);
@@ -1147,8 +1150,13 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
     z-index: 1000;
     padding: 40px 24px;
     overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0s linear 0.28s;
+    pointer-events: none;
   }
-  nav.nav-open .nav-links { display: flex; }
+  nav.nav-open .nav-links { visibility: visible; opacity: 1; transform: translateY(0); transition: opacity 0.28s ease, transform 0.28s ease; pointer-events: auto; }
   .nav-links a {
     color: var(--white) !important;
     font-size: 1.1rem !important;
@@ -1199,9 +1207,35 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 
 @media (max-width: 640px) {
   .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .contact-main-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
   .contact-ways { grid-template-columns: 1fr !important; gap: 16px !important; }
   .contact-section-inner { padding: 0 16px !important; }
+  .map-section { grid-template-columns: 1fr !important; }
+  .map-info { padding: 32px 24px !important; }
+  .map-placeholder { min-height: 220px; }
 }
+
+/* Nav close button (inside overlay) */
+.nav-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.nav-close-btn:hover { background: rgba(255,255,255,0.2); }
 </style>
 </head>
 <body>
@@ -1241,7 +1275,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
 </img></div>
 <div class="section">
 <div class="section-inner">
-<div style="display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;">
+<div class="contact-main-grid" style="display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start;">
 <!-- LEFT: Get in touch -->
 <div class="contact-info">
 <h2>Get in touch with our team</h2>
@@ -1395,7 +1429,7 @@ nav.nav-open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(
   burger.addEventListener('click', function(){
     nav.classList.toggle('nav-open');
   });
-  document.querySelectorAll('.nav-links a').forEach(function(a){
+  document.querySelectorAll('.nav-links a, .nav-close-btn').forEach(function(a){
     a.addEventListener('click', function(){ nav.classList.remove('nav-open'); });
   });
 })();
