@@ -219,20 +219,23 @@ nav {
 }
 .hero-stat-card {
   position: absolute;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(11,30,56,0.45);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-left: 3px solid var(--blue-accent);
+  backdrop-filter: blur(16px);
   border-radius: 16px;
   padding: 22px 28px;
   color: var(--white);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.32);
 }
 .hero-stat-card .num {
   font-family: var(--font-head);
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.6rem;
+  font-weight: 800;
   color: var(--blue-accent);
+  line-height: 1;
 }
-.hero-stat-card .label { font-size: 0.85rem; color: #94a3b8; margin-top: 4px; }
+.hero-stat-card .label { font-size: 0.88rem; color: #cbd5e1; margin-top: 8px; font-weight: 500; }
 .hero-stat-card:nth-child(1) { top: 30px; left: 0; width: 170px; }
 .hero-stat-card:nth-child(2) { top: 40px; right: 0; width: 190px; }
 .hero-stat-card:nth-child(3) { bottom:70px; left: 10px; width: 180px; }
@@ -1188,6 +1191,9 @@ footer {
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .prog-card::before {
   content: '';
@@ -1485,30 +1491,30 @@ nav.nav-open { z-index: 1100 !important; }
 <h2 class="section-title">Spots are filling up. Secure yours.</h2>
 <div class="section-divider"></div>
 <div class="prog-cards-grid">
-<div class="prog-card">
+<a class="prog-card" href="presentation-skills.html">
 <div class="prog-card-open">● Registrations Open</div>
 <div class="prog-card-name">Presentation Skills Program</div>
 <p style="font-size:0.85rem;color:#94a3b8;line-height:1.6;margin:0;">Communicate with clarity, confidence and real influence - in any room.</p>
 <div class="prog-card-footer">
-<a class="btn-prog-primary" href="presentation-skills.html">Find Out More →</a>
+<span class="btn-prog-primary">Find Out More →</span>
 </div>
-</div>
-<div class="prog-card">
+</a>
+<a class="prog-card" href="selling-by-stealth.html">
 <div class="prog-card-open">● Registrations Open</div>
 <div class="prog-card-name">Selling by Stealth Program</div>
 <p style="font-size:0.85rem;color:#94a3b8;line-height:1.6;margin:0;">Master the art of authentic, relationship-driven selling that closes without pressure.</p>
 <div class="prog-card-footer">
-<a class="btn-prog-primary" href="selling-by-stealth.html">Find Out More →</a>
+<span class="btn-prog-primary">Find Out More →</span>
 </div>
-</div>
-<div class="prog-card">
+</a>
+<a class="prog-card" href="str.html">
 <div class="prog-card-open">● Registrations Open</div>
 <div class="prog-card-name">Short Term Rental Program</div>
 <p style="font-size:0.85rem;color:#94a3b8;line-height:1.6;margin:0;">Build a scalable, profitable short-term rental business from the ground up.</p>
 <div class="prog-card-footer">
-<a class="btn-prog-primary" href="str.html">Find Out More →</a>
+<span class="btn-prog-primary">Find Out More →</span>
 </div>
-</div>
+</a>
 </div>
 </div>
 </div>
